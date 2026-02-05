@@ -1,26 +1,31 @@
 @import "tailwindcss";
 
+@theme {
+  /* 1. 우리가 쓸 힙한 컬러들 정의 */
+  --color-neonPurple: #a855f7;
+  --color-neonPink: #ec4899;
+  --color-neonCyan: #06b6d4;
+  --color-darkBg: #0a0a14;
+
+  /* 2. 트렌디한 그라데이션 정의 */
+  --image-trendy-gradient: linear-gradient(to right, #ec4899, #a855f7, #06b6d4);
+  
+  /* 3. 애니메이션 정의 (선택사항) */
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* 다크모드 기본 배경 설정 */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  background-color: var(--color-darkBg);
+  color: white;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* 카드 호버 효과 등 커스텀 유틸리티 */
+@utility card-hover {
+  transition: all 0.3s;
+  &:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+    border-color: rgba(168, 85, 247, 0.5);
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
