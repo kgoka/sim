@@ -63,4 +63,12 @@ export const DUMMY_TESTS: TestData[] = [
     imageUrl: 'from-gray-600 to-red-600',
     tags: ['연애', '심리','AI'],
   },
+  {
+    id: 'basketball', // 유니크한 ID
+    title: 'NBA 농구 선수 성향 테스트',
+    description: '크리퍼? 아니 커리? 나와 플레이 스타일이 닮은 NBA 선수는 누구일까요?',
+    imageUrl: '/images/basketball-cover.png', // (이미지가 없다면 일단 비워두거나 다른 파일명 넣기)
+    link: '/tests/basketball', // 아까 만든 페이지 경로
+    tags: ['#농구', '#NBA', '#성향'] // 태그가 있다면 추가
+  },
 ];
